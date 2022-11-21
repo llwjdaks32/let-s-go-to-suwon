@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수원으로 가자</title>
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+
+  <!-- 리셋 -->
+  <link rel="stylesheet" href="./css/reset.css" type="text/css">
+  <!-- 메인 -->
+  <link rel="stylesheet" href="./css/main.css" type="text/css">
+  <!-- 레이아웃 -->
+  <link rel="stylesheet" href="./css/layout.css" type="text/css">
+  <!-- 베이스 -->
+  <link rel="stylesheet" href="./css/base.css" type="text/css">
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- 스와이퍼슬라이드 서식 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="./script/jquery-3.6.1.js"></script>
+  <!-- 제이쿼리 ui -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- 메인 js -->
+  <script src="./script/main.js"></script>
+
+  <script>
+    $(document).ready(function(){
+  $('.lnb').hide();
+  $('.lnb_wrap .fa-xmark').click(function(){
+    $('.lnb').fadeOut(300)
+    $('body').removeClass('scroll_hide')
+  });
+  $('.toggle_icon .fa-magnifying-glass').click(function(){
+    $('.lnb').fadeIn(300)
+    $('body').addClass('scroll_hide')
+  });
+
+
+  $('.gnb_x').click(function(){
+    $('.gnb').animate({'right':'-100%'},300,'easeOutQuint')
+    $('body').removeClass('scroll_hide')
+  });
+  $('.toggle_icon .fa-bars').click(function(){
+    $('.gnb').animate({'right':'0%'},300,'easeOutQuint')
+    $('body').addClass('scroll_hide')
+  });
+
+  $('.gnb li a').click(function(){
+    if($(this).next($('.sub')).css('display') == 'block'){
+      $(this).next($('.sub')).slideUp(300)
+      $('.gnb li a i').removeClass('rotate')
+    }else{
+      $('.gnb li a i').removeClass('rotate')
+      $('.sub').slideUp(300)
+      $(this).next($('.sub')).slideDown(300)
+      $(this).find('i').addClass('rotate')
+    }
+
+    
+  })
+
+  let bar= $('.nav_bar li');
+  let s_wrap = $('.s_wrap li')
+  bar.click(function(){
+    $('.nav_bar li').removeClass('color_bar')
+    $(this).addClass('color_bar')
+  })
+  
+  let nav1 =$('.nav1')
+  let nav2 =$('.nav2')
+  let nav3 =$('.nav3')
+  let nav4 =$('.nav4')
+
+  let s_1 =$('.s_1')
+  let s_2 =$('.s_2')
+  let s_3 =$('.s_3')
+  let s_4 =$('.s_4')
+  let s_all =$('.s_all')
+
+  s_1.show();
+  nav1.click(function(){
+    s_all.hide();
+    s_1.show();
+  })
+  nav2.click(function(){
+    s_all.hide();
+    s_2.show();
+  })
+  nav3.click(function(){
+    s_all.hide();
+    s_3.show();
+  })
+  nav4.click(function(){
+    s_all.hide();
+    s_4.show();
+  })
+});
+  </script>
+</head>
+<body>
+  <!-- 헤더영역 -->
+  <header>
+    <div class="header_wrap">
+      <h1>
+        <a href="#" title="로고"><img src="./img/logo/logo.png" alt="로고"></a>
+      </h1>
+  
+      <nav class="toggle_icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-bars"></i>
+      </nav>
+    </div>
+    
+
+    <nav class="lnb">
+      <div class="lnb_wrap">
+        <i class="fa-solid fa-xmark inb_x"></i>
+        <input type="text" id="search" placeholder="검색어를 입력하세요">
+        <label for="search">
+        </label>
+      </div>
+    </nav>
+
+    <nav class="gnb">
+      <i class="fa-solid fa-xmark gnb_x"></i>
+      <ul>
+        <li></li>
+        <li>
+          <a href="javascript:void(0);" title="">수원화성 <i class="fa-solid fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="javascript:void(0);" title="">수원화성</a></li>
+            <li><a href="javascript:void(0);" title="">화성행궁</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:void(0);" title="">수원관광 <i class="fa-solid fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="javascript:void(0);" title="">관람과 체험</a></li>
+            <li><a href="javascript:void(0);" title="">문화와 체험</a></li>
+            <li><a href="javascript:void(0);" title="">아름다운 자연</a></li>
+            <li><a href="javascript:void(0);" title="">수원의 음식</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:void(0);" title="">추천관광코스 <i class="fa-solid fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="javascript:void(0);" title="">일정별 코스</a></li>
+            <li><a href="javascript:void(0);" title="">계절 별 코스</a></li>
+            <li><a href="javascript:void(0);" title="">수원화성 코스</a></li>
+            <li><a href="javascript:void(0);" title="">도보코스</a></li>
+            <li><a href="javascript:void(0);" title="">자전거코스</a></li>
+            <li><a href="javascript:void(0);" title="">시장코스</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:void(0);" title="">여행 길라잡이 <i class="fa-solid fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="javascript:void(0);" title="">관광 안내소</a></li>
+            <li><a href="javascript:void(0);" title="">쇼핑</a></li>
+            <li><a href="javascript:void(0);" title="">숙박</a></li>
+          </ul>
+        </li>
+        <div>
+          <a href="#" title="">로그인</a>
+          <a href="#" title>회원가입</a>
+        </div>
+      </ul>
+    </nav>
+  </header>
+  <!-- 헤더영역 -->
+
+  <!-- 메인영역 -->
+  <main>
+    <section class="main_slide">
+      <div class="swiper m_slide">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <figure>
+              <img src="./img/Suwon_Hwaseong1.png" alt="">
+              <figcaption>
+                <div class="s_txt">세계문화유산 역사적 가치</div>
+                <div class="b_txt">수원화성</div>
+                <a href="javascript:void(0);" title="" class="view">자세히보기<span><i class="fa-solid fa-chevron-right"></i></span></a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="./img/tourism1_(1).png" alt="">
+              <figcaption>
+                <div class="s_txt">수원의 역사와 문화를 다양하게 보여주는</div>
+                <div class="b_txt">수원박물관</div>
+                <a href="javascript:void(0);" title="" class="view">자세히보기<span><i class="fa-solid fa-chevron-right"></i></span></a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="./img/culture (3).jpg" alt="">
+              <figcaption>
+                <div class="s_txt">수원화성의 생생한 가치를 느낄 수 있는</div>
+                <div class="b_txt">세계유산축전</div>
+                <a href="javascript:void(0);" title="" class="view">자세히보기<span><i class="fa-solid fa-chevron-right"></i></span></a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-slide">
+            <figure>
+              <img src="./img/nature (4).png" alt="">
+              <figcaption>
+                <div class="s_txt">국내 최대의 도심 속 호수공원</div>
+                <div class="b_txt">광교호수공원</div>
+                <a href="javascript:void(0);" title="" class="view">자세히보기<span><i class="fa-solid fa-chevron-right"></i></span></a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section class="section1">
+      <h2>
+        수원을 대표하는<br>
+        <span class="point_color">수원화성과 화성행궁</span>
+      </h2>
+      <a href="javascript:void(0);" title="" class="view">자세히보기<span><i class="fa-solid fa-chevron-right"></i></span></a>
+
+      <div class="swiper sec1_slide">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div>
+              <img src="./img/Suwon_Hwaseong1.png" alt="">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div>
+              <img src="./img/Suwon_Hwaseong2.png" alt="">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+
+    <section class="section2">
+      <h2>
+        수원의 다양한 볼거리와 맛집<br>
+        <span class="point_color">수원 관광</span>
+      </h2>
+      
+      <a href="javascript:void(0);" title="" class="view">자세히보기<span><i class="fa-solid fa-chevron-right"></i></span></a>
+
+      <ul class="nav_bar">
+        <li class="nav1 color_bar">관람과 체험</li>
+        <li class="nav2">문화와 체험</li>
+        <li class="nav3">아름다운 자연</li>
+        <li class="nav4">수원의 음식</li>
+      </ul>
+      
+      <ul class="s_wrap">
+        <li class="s_1 s_all">
+          <div class="swiper sec2_slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/tourism1_(1).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>수원박물관</dt>
+                        <dd>수원박물관은 수원의 유구한 역사와 문화를 다양하게 보여주는 '수원역사박물관', 한국 서예사의 흐름을 한 눈에 파악할 수 있는 '한국서예박물관' 으로 구성되어 있습니다. 아울러 다양한 주제로 기획되는 특별전시전과 여러 가지 체험 아이템이 있는 어린이 체험실이 구비되어 있어 가족과 함께 방문하기 좋은 박물관입니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/tourism1_(2).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>수원SK아트리움</dt>
+                        <dd>950석 규모의 대공연장과 300석 규모의 소공연장으로 구성된 전문공연장으로 양질의 공연과 문화예술교육 프로그램 운영으로 북수원권의 새로운 문화 랜드마크 로 자리매김 하고 있습니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/tourism1_(3).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>전통식생활체험관</dt>
+                        <dd>전통식생활체험관은 전통 식생활 문화의 계승과 발전을 위해 설립되었습니다.
+                          전통 식생활 문화와 관련한 자료 전시, 강연과 전통 음식 실습 및 체험활동, 건강한 식생활 문화 조성을 위한 교육 및 지식 확산을 체험하는 공간입니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/tourism1_(4).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>수원시립아이파크미술관</dt>
+                        <dd>수원시립아이파크미술관은 시민들의 새로운 문화 쉼터가 되고자 2015년 10월 8일 개관하였습니다.
+                          전통과 현대의 문화예술 플랫폼으로 지역작가를 후원․발굴하고 국내외 새로운 미술경향을 소개합니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </li>
+        <li class="s_2 s_all">
+          <div class="swiper sec2_slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/culture (1).jpg" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>수원화성 미디어아트쇼</dt>
+                        <dd>미디어아트쇼 만천명월(萬川明月) : 정조의 꿈, 빛이 되다
+                          ‘만천명월’은 정조대왕이 꿈꾸었던 세상을 다채로운 ‘빛’으로 표현한 초대형 미디어 아트 쇼로, 만개의 천(川)을 비추는 군주의 달은 세상을 공평하게 비추는 아름다운 빛이 되고 정조가 꿈꿨던 여민동락의 세상은 현대의 빛으로 다채롭게 변주된다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/culture (1).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>정조대왕 능행차 공동재현</dt>
+                        <dd>조선 후기를 문화적 황금기 시대로 이끌어 큰 부흥을 이루었던 22대 왕 정조. 가장 성대했던 왕의 행복한 행차를 재현하는 정조대왕 능행차 공동재현이 2022년 가을에 찾아옵니다.
+                        </dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/culture (2).jpg" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>수원화성문화제</dt>
+                        <dd>2020~2021 문화관광축제, 조선 제22대 정조대왕의 효심과 부국강병의 원대한 꿈으로 축성된 세계문화유산 수원화성에서 펼쳐지는 대표적인 전통문화관광축제인 ‘수원화성문화제’가 오는 2022년 가을에 개최합니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/culture (3).jpg" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>세계유산축전</dt>
+                        <dd>유네스코 세계유산 수원화성의 생생한 가치를 느낄 수 있는 (세계유산축전 수원화성)입니다.
+                          수원화성 축성과 관련된 원행을묘정리의궤, 화성성역의궤, 정리의궤 등 역사적 기록을 기반으로 공연, 전시, 체험, 교육, 투어 등 다양한 콘텐츠를 선보입니다. 수원화성의 의미를 보다 깊이 이해하게 될 것입니다..</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </li>
+        <li class="s_3 s_all">
+          <div class="swiper sec2_slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/nature (1).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>만석공원과 만석거(일왕저수지)</dt>
+                        <dd>만석공원은 수원의 대표적인 시민공원으로 주변에 수원제2야외음악당과 수원시미술 전시관 등이 자리하고 있어 나들이를 겸해 문화생활의 즐거움도 누릴 수 있습니다. 수변경관이 아름다운 일왕저수지와 자연생태학습장, 산책로와 무지개빛 음악분수도 만석공원의 또 다른 매력입니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/nature (2).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>광교공원과 광교저수지</dt>
+                        <dd>물과 숲을 테마로 조성된 광교공원은 넓은 잔디밭과 산책로, 음악분수, 생태하천으로 거듭난 수원천 등 시민들이 여가를 즐길 수 있도록 조성된 도심 속 녹지공원입니다. 언제 찾아도 계절의 정취를 만끽할 수 있는 광교저수지와 광교산이 이어져 있어 가족과 연인들의 나들이 장소로 각광받고 있습니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/nature (3).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>광교산 산림욕장</dt>
+                        <dd>450ha의 자연 삼림에 산책 코스를 정비하고 각종 운동 기구를 설치해 등산과 휴양을 함께 즐길 수 있는 건강공원입니다.
+                          상쾌한 숲길을 걸으며 쌓인 피로를 말끔히 씻어낼 수 있어 시민들에게 기분 좋은 휴식 처가 되고 있습니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/nature (4).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>광교호수공원</dt>
+                        <dd>광교호수공원은 광교산과 원천저수지 및 신대저수지의 자연을 최대한 보존하며 아름다운 수변공간인 어반레비와 함께 6개의 테마를 가진 둠벙으로 어우러져 여러 가지 새로운 문화를 담은 국내 최대의 도심 속 호수공원입니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </li>
+        <li class="s_4 s_all">
+          <div class="swiper sec2_slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/food (1).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>수원 순대타운</dt>
+                        <dd>수원 지동시장 먹자골목 안에 30~40년 전통을 자랑하는 순대집들이 모여 있는 순대 타운이 있습니다.
+                          신선하고 좋은 재료로 만들어 냄새 없이 깔끔한 맛과 푸짐한 양으로 수원지역은 물론, 외지에서도 일부러 찾아 올 만큼 유명세를 타고 있습니다.
+                          부담 없고 편안한 분위기에서 쫄깃하고 담백한 다양한 순대요리를 맛볼 수 있습니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/food (2).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>청년푸드트레일러</dt>
+                        <dd>특색 있는 수원의 전통시장이 야간에도 활성화될 수 있도록 ‘청년창업 푸드트레일러 ZONE’이 있는 문화야시장으로 운영하여 다양한 먹거리를 제공하고 젊은 세대를 전통시장에 끌어들여 전통시장의 활기를 되찾아줄 프로젝트입니다.
+                          또한, 취업난을 겪는 청년들에게 창업의 기회까지 제공하는 일석이조 사업입니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/food (3).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>수원갈비</dt>
+                        <dd>수원하면 단연 '갈비'가 으뜸!
+                          전국을 넘어 세계에 그 맛을 알리고 있는 수원갈비는 다른 지방의 갈비보다 크고 푸짐하여 육질이 부드럽고 육즙이 풍부해 맛이 매우 좋습니다.
+                          은은한 숯불에 구워 먹으면 입 안 가득 고기 고유의 향과 고소한 식감이 전해져 수원 양념갈비의 참맛을 제대로 즐길 수 있습니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div>
+                  <figure>
+                    <img src="./img/food (4).png" alt="">
+                    <figcaption>
+                      <dl>
+                        <dt>수원 통닭거리</dt>
+                        <dd>낮에는 수원화성 관광, 밤에는 수원 통닭거리 방문 수원에서만 유명한 거리가 아니라 전국적으로 유명한 거리가 있습니다.
+                          팔달문 인근 '수원 통닭거리' 입니다.
+                          진미통닭, 용성통닭, 남문통닭, 매향통닭, 장안통닭, 중앙치킨타운은 지금까지 수 십년 통닭의 맛을 지키며 수원 통닭거리의 명성을 만든 일등공신입니다.</dd>
+                      </dl>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+
+    <section class="section3">
+      <h2>
+        보다 수월한 여행을 위한<br>
+        <span class="point_color">추천관광코스</span>
+      </h2>
+      <div class="swiper sec3_slide">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div>
+            <img src="./img/cos (1).png" alt="">
+            <p>일정별코스</p>
+            </div>
+          </div>
+          <div class="swiper-slide bottom">
+            <div>
+            <img src="./img/cos (2).png" alt="">
+            <p>계절코스</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div>
+            <img src="./img/cos (3).png" alt="">
+            <p>화성코스</p>
+            </div>
+          </div>
+          <div class="swiper-slide bottom">
+            <div>
+            <img src="./img/cos (4).png" alt="">
+            <p>도보코스</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div>
+            <img src="./img/cos (5).png" alt="">
+            <p>자전거코스</p>
+            </div>
+          </div>
+          <div class="swiper-slide bottom">
+            <div>
+            <img src="./img/cos (6).png" alt="">
+            <p>시장코스</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="javascript:void(0);" title="" class="view">자세히보기<span><i class="fa-solid fa-chevron-right"></i></span></a>
+    </section>
+    <section class="section4">
+      <h2>
+        어디로 가야할 지 모를땐<br>
+        <span class="point_color">여행 길라잡이</span>
+      </h2>
+      <a href="javascript:void(0);" title="" class="view">자세히보기<span><i class="fa-solid fa-chevron-right"></i></span></a>
+      <div class="guide">
+        <div>
+          <img src="./img/guide1.png" alt="">
+        </div>
+        <ul>
+          <li class="con1">01</li>
+          <li class="con2"></li>
+          <li class="con3">
+            <dl>
+              <dt>관광 안내소</dt>
+              <dd>수원을 즐겁게 즐기기 위한 첫 장소가 될
+                수원관광안내소의 위치를 소개합니다.</dd>
+            </dl>
+          </li>
+          <li class="con4">
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="guide">
+        <div>
+          <img src="./img/guide2.png" alt="">
+        </div>
+        <ul>
+          <li class="con1">02</li>
+          <li class="con2"></li>
+          <li class="con3">
+            <dl>
+              <dt>쇼핑</dt>
+              <dd>수원의 다양하고 화려한 쇼핑몰을
+                소개합니다.</dd>
+            </dl>
+          </li>
+          <li class="con4">
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="guide">
+        <div>
+          <img src="./img/guide3.jpg" alt="">
+        </div>
+        <ul>
+          <li class="con1">03</li>
+          <li class="con2"></li>
+          <li class="con3">
+            <dl>
+              <dt>숙박</dt>
+              <dd>고객님에게 편안한 휴식을 제공해 줄
+                수원의 관광호텔을 소개합니다.</dd>
+            </dl>
+          </li>
+          <li class="con4">
+            <i class="fa-solid fa-chevron-right"></i>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <!-- 메인영역 -->
+
+  <!-- 푸터영역 -->
+  <footer>
+    <h1><a href="#" title><img src="./img/logo/f_logo.png" alt=""></a></h1>
+    <nav class="nav01"><a href="" title="">개인정보처리방침</a><a href="" title="">이용약관</a></nav>
+    <nav class="nav02">(우편번호:00000) 경기도 수원시 000 000 000(000) 전화:0000-0000</nav>
+    <address>Copyrightⓒ 2022 GO TO SUWON All Rights Reserved.</address>
+  </footer>
+  <!-- 푸터영역 -->
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".m_slide", {
+      effect: 'fade',
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop:true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+    var swiper = new Swiper(".sec1_slide", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+
+      var swiper = new Swiper(".sec2_slide", {
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        observer: true,
+        observeParents: true,
+      });
+      var swiper = new Swiper(".sec3_slide", {
+        slidesPerView: 3.5,
+        spaceBetween: 30,
+        slidesPerGroup: 1,
+        loop: true,
+        loopFillGroupWithBlank: true,
+      });
+  </script>
+</body>
+</html>
